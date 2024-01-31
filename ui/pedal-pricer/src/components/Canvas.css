@@ -1,0 +1,78 @@
+.p {
+    position: absolute;
+    z-index: 50;
+}
+
+.pb {
+    position: absolute;
+    z-index: 10;
+}
+
+.ps {
+    position: absolute;
+    z-index: 50; /* this will probably be changeable in the future depending on if user wants power supply below of under board*/
+}
+
+.itemcard {
+
+    position: fixed;
+    z-index: 5;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 20px;
+    background: #1c1c1c;
+    z-index: 100;
+    right: 20px;
+    top: 100px;
+    color: rgb(255, 255, 255, 0.8);
+
+}
+
+.itemcard > div {
+
+    padding: 15px;
+    font-size: 14px;
+
+}
+
+.itemdimensions, .itemprice, .override {
+    border-top: 1px solid rgb(255, 255, 255, 0.2);
+}
+
+.override {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#currency-input{
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 12px;
+    margin-bottom: 3px;
+}
+
+.itemprice {
+    color: #04AA6D;
+}
+
+.total {
+    position: fixed;
+    left: 50%;
+    background: #1c1c1c;
+    bottom: 20px;
+    color: #00FF94;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    z-index: 100;
+}
+
+.resetter {
+    width: 100vw;
+    height: 100vh;
+}

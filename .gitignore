@@ -1,0 +1,29 @@
+# dependencies
+ui/pedal-pricer/node_modules
+ui/pedal-pricer/.pnp
+.pnp.js
+
+# images
+api/PedalPricerAPI/Images
+
+api/PedalPricerAPI/obj
+api/PedalPricerAPI/bin
+api/PedalPricerAPI/.vs
+api/PedalPricerAPI/PedalPricerAPI.csproj.user
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
