@@ -129,4 +129,4 @@ If you'd like to help with the development of the project, there are many ways y
   <li>Add price data</li>
 </ul>
 
-Please feel free to open a pull request, you will be credited accordingly.
+Please feel free to open a [pull request](https://github.com/4acf/pedal-pricer/pulls), you will be credited accordingly.
