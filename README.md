@@ -6,17 +6,28 @@ Pedal pricer is a tool for guitar players to budget and plan guitar effects peda
 ## Usage
 
 Using pedal pricer is very simple.
-First add any item using the sidebar on the left.
+
+First, add any item using the sidebar on the left.
+
+<br>
 
 ![A selected pedal](images/dynacomps.png)
+
+Every item can be rotated in 90 degree increments using the rotate bar on the top right of a selected pedal.
+
+<br>
 
 ![Total price](images/total.png)
 
 Pedal pricer keeps track of the total price of all items that are currently in the canvas!
 
+<br>
+
 > [!WARNING]
 > Pedal pricer is still early in development.
 > Since there are thousands of items, not all of them have price data as of now.
+
+<br>
 
 Because not every price can be completely accurate, Pedal Pricer offers a way to override price of any item. It can be found at the bottom of the info box when an item is selected.
 
