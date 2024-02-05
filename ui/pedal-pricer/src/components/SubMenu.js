@@ -108,7 +108,7 @@ const fetchItem = async (itemCart, type) => {
 
   }
 
-const interpretData = (itemData, type) => {
+export const interpretData = (itemData, type) => {
 
     if(!itemData)
         return [];
@@ -118,6 +118,9 @@ const interpretData = (itemData, type) => {
 
     if(type === "Pedal"){
         for(let item of itemData){
+
+            if(!item.pedalName || !Number.isInteger(item.pedalID))
+                continue;
 
             if(!map.has(item.pedalBrand)){
                 let idx = map.size;
@@ -136,6 +139,9 @@ const interpretData = (itemData, type) => {
     else if(type === "Pedalboard"){
         for(let item of itemData){
 
+            if(!item.pedalboardName || !Number.isInteger(item.pedalboardID))
+                continue;
+
             if(!map.has(item.pedalboardBrand)){
                 let idx = map.size;
                 map.set(item.pedalboardBrand, idx);
@@ -152,6 +158,9 @@ const interpretData = (itemData, type) => {
 
     else if(type === "PowerSupply"){
         for(let item of itemData){
+
+            if(!item.powerSupplyName || !Number.isInteger(item.powerSupplyID))
+                continue;
 
             if(!map.has(item.powerSupplyBrand)){
                 let idx = map.size;
@@ -170,6 +179,9 @@ const interpretData = (itemData, type) => {
     let groupedOptions = [];
 
     for(let key of map.keys()){
+
+        if(!key)
+            continue;
 
         let i = map.get(key);
         let items = data[i];
