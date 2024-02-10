@@ -120,6 +120,7 @@ export default function Canvas({ data }) {
     setSelected(false);
     setSelectedID(-1);
     setHidden(true);
+    updateTotal();
 
   }
 
@@ -163,6 +164,8 @@ export default function Canvas({ data }) {
       }
         
     }
+
+    t = t.toFixed(2);
 
     setTotal(total => t);
 
