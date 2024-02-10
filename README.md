@@ -1,7 +1,7 @@
 # Pedal Pricer
 ![Preview Image](images/pedals.png)
 
-Pedal pricer is a tool for guitar players to budget and plan guitar effects pedalboards. It was built using React, ASP.NET Core, and Microsoft SQL Server, and takes inspiration from the existing [pedalplayground.com](pedalplayground.com)!
+Pedal pricer is a tool for guitar players to budget and plan guitar effects pedalboards. It was built using React, ASP.NET Core, and Microsoft SQL Server, and takes inspiration from the existing [pedalplayground.com](https://pedalplayground.com)!
 
 ## Usage
 
@@ -90,13 +90,13 @@ The /GetBasicInfo endpoint returns a lightweight response intended to provide th
 Pedal pricer relies on many react dependencies. If you intend to setup the project locally, you can install them with `npm install`
 Here is a list of helpful react modules I made use of:
 <ul>
-  <li>react-currency-input-field</li>
-  <li>react-draggable</li>
-  <li>react-icons</li>
-  <li>react-modal</li>
-  <li>react-select</li>
-  <li>react-windowed-select</li>
-  <li>styled-components</li>
+  <li><a href="https://www.npmjs.com/package/react-currency-input-field">react-currency-input-field</a></li>
+  <li><a href="https://www.npmjs.com/package/react-draggable">react-draggable</a></li>
+  <li><a href="https://www.npmjs.com/package/react-icons">react-icons</a></li>
+  <li><a href="https://www.npmjs.com/package/react-modal">react-modal</a></li>
+  <li><a href="https://react-select.com/home">react-select</a></li>
+  <li><a href="https://github.com/jacobworrel/react-windowed-select">react-windowed-select</a></li>
+  <li><a href="https://styled-components.com/">styled-components</a></li>
 </ul>
 
 ## Tests
