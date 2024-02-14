@@ -35,7 +35,7 @@ namespace PedalPricerAPI.Controllers
                 string query = @"
                             select PowerSupplyID, PowerSupplyBrand, PowerSupplyName, PowerSupplyWidth, PowerSupplyHeight, PowerSupplyPrice, PowerSupplyImageFilename from
                             dbo.PowerSupplies
-                            where PowerSupplyID = '" + powersupply + "'";
+                            where PowerSupplyID = @id";
 
                 string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
                 SqlDataReader myReader;
@@ -44,6 +44,7 @@ namespace PedalPricerAPI.Controllers
                     myCon.Open();
                     using (SqlCommand myCommand = new SqlCommand(query, myCon))
                     {
+                        myCommand.Parameters.AddWithValue("@id", powersupply);
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
                         myReader.Close();
@@ -85,32 +86,36 @@ namespace PedalPricerAPI.Controllers
 
         [Authorize]
         [HttpPost]
-        public JsonResult Post(PowerSupply ps)
+        public JsonResult Post(List<PowerSupply> psList)
         {
-            string query = @"
+
+            foreach (PowerSupply ps in psList)
+            {
+                string query = @"
                             insert into dbo.PowerSupplies
                             (PowerSupplyBrand, PowerSupplyName, PowerSupplyWidth, PowerSupplyHeight, PowerSupplyPrice, PowerSupplyImageFilename)
                             values (@PowerSupplyBrand, @PowerSupplyName, @PowerSupplyWidth, @PowerSupplyHeight, @PowerSupplyPrice, @PowerSupplyImageFilename)
                             ";
 
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
+                SqlDataReader myReader;
+                using (SqlConnection myCon = new SqlConnection(sqlDataSource))
                 {
-                    myCommand.Parameters.AddWithValue("@PowerSupplyBrand", ps.PowerSupplyBrand);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyName", ps.PowerSupplyName);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyWidth", ps.PowerSupplyWidth);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyHeight", ps.PowerSupplyHeight);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyPrice", ps.PowerSupplyPrice);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyImageFilename", ps.PowerSupplyImageFilename);
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-                    myReader.Close();
-                    myCon.Close();
+                    myCon.Open();
+                    using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                    {
+                        myCommand.Parameters.AddWithValue("@PowerSupplyBrand", ps.PowerSupplyBrand);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyName", ps.PowerSupplyName);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyWidth", ps.PowerSupplyWidth);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyHeight", ps.PowerSupplyHeight);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyPrice", ps.PowerSupplyPrice);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyImageFilename", ps.PowerSupplyImageFilename);
+                        myReader = myCommand.ExecuteReader();
+                        table.Load(myReader);
+                        myReader.Close();
+                        myCon.Close();
+                    }
                 }
             }
 
@@ -121,9 +126,11 @@ namespace PedalPricerAPI.Controllers
         [Authorize]
         [HttpPut]
 
-        public JsonResult Put(PowerSupply ps)
+        public JsonResult Put(List<PowerSupply> psList)
         {
-            string query = @"
+            foreach (PowerSupply ps in psList)
+            {
+                string query = @"
                             update dbo.PowerSupplies
                             set PowerSupplyBrand = @PowerSupplyBrand,
                             PowerSupplyName = @PowerSupplyName,
@@ -134,25 +141,26 @@ namespace PedalPricerAPI.Controllers
                             where PowerSupplyID = @PowerSupplyID 
                             ";
 
-            DataTable table = new DataTable();
-            string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
-            SqlDataReader myReader;
-            using (SqlConnection myCon = new SqlConnection(sqlDataSource))
-            {
-                myCon.Open();
-                using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                DataTable table = new DataTable();
+                string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
+                SqlDataReader myReader;
+                using (SqlConnection myCon = new SqlConnection(sqlDataSource))
                 {
-                    myCommand.Parameters.AddWithValue("@PowerSupplyID", ps.PowerSupplyId);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyBrand", ps.PowerSupplyBrand);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyName", ps.PowerSupplyName);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyWidth", ps.PowerSupplyWidth);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyHeight", ps.PowerSupplyHeight);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyPrice", ps.PowerSupplyPrice);
-                    myCommand.Parameters.AddWithValue("@PowerSupplyImageFilename", ps.PowerSupplyImageFilename);
-                    myReader = myCommand.ExecuteReader();
-                    table.Load(myReader);
-                    myReader.Close();
-                    myCon.Close();
+                    myCon.Open();
+                    using (SqlCommand myCommand = new SqlCommand(query, myCon))
+                    {
+                        myCommand.Parameters.AddWithValue("@PowerSupplyID", ps.PowerSupplyId);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyBrand", ps.PowerSupplyBrand);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyName", ps.PowerSupplyName);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyWidth", ps.PowerSupplyWidth);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyHeight", ps.PowerSupplyHeight);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyPrice", ps.PowerSupplyPrice);
+                        myCommand.Parameters.AddWithValue("@PowerSupplyImageFilename", ps.PowerSupplyImageFilename);
+                        myReader = myCommand.ExecuteReader();
+                        table.Load(myReader);
+                        myReader.Close();
+                        myCon.Close();
+                    }
                 }
             }
 

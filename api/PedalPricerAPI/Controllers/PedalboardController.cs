@@ -35,7 +35,7 @@ namespace PedalPricerAPI.Controllers
                 string query = @"
                             select PedalboardID, PedalboardBrand, PedalboardName, PedalboardWidth, PedalboardHeight, PedalboardPrice, PedalboardImageFilename from
                             dbo.Pedalboards
-                            where PedalboardID = '" + pedalboard + "'";
+                            where PedalboardID = @id";
 
                 string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
                 SqlDataReader myReader;
@@ -44,6 +44,7 @@ namespace PedalPricerAPI.Controllers
                     myCon.Open();
                     using (SqlCommand myCommand = new SqlCommand(query, myCon))
                     {
+                        myCommand.Parameters.AddWithValue("@id", pedalboard);
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
                         myReader.Close();

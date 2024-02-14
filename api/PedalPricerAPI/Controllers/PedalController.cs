@@ -35,11 +35,11 @@ namespace PedalPricerAPI.Controllers
 
             foreach (var pedal in items)
             {
-                //im not the biggest fan of having these raw queries in the application layer like this but it works and still should prevent most sql injections
+          
                 string query = @"
                             select PedalID, PedalBrand, PedalName, PedalWidth, PedalHeight, PedalPrice, PedalImageFilename from
                             dbo.Pedals
-                            where PedalID = '" + pedal + "'";  
+                            where PedalID = @id";
 
                 
                 string sqlDataSource = _configuration.GetConnectionString("PedalAppCon");
@@ -49,6 +49,7 @@ namespace PedalPricerAPI.Controllers
                     myCon.Open();
                     using (SqlCommand myCommand = new SqlCommand(query, myCon))
                     {
+                        myCommand.Parameters.AddWithValue("@id", pedal);
                         myReader = myCommand.ExecuteReader();
                         table.Load(myReader);
                         myReader.Close();
