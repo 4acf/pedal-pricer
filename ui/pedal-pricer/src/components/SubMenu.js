@@ -108,6 +108,22 @@ const fetchItem = async (itemCart, type) => {
 
   }
 
+export const compareValue = (a, b) => {
+    if(a.value < b.value)
+        return -1;
+    if(a.value > b.value)
+        return 1;
+    return 0;
+}
+
+export const compareLabel = (a, b) => {
+    if(a.label < b.label)
+        return -1;
+    if(a.label > b.label)
+        return 1;
+    return 0;
+}
+
 export const interpretData = (itemData, type) => {
 
     if(!itemData)
@@ -193,7 +209,9 @@ export const interpretData = (itemData, type) => {
                 value: item.name,
                 label: `${key} ${item.name}`
             })
-        }
+        }  
+
+        arr.sort(compareValue);
 
         groupedOptions.push(
             {
@@ -204,6 +222,7 @@ export const interpretData = (itemData, type) => {
 
     }
 
+    groupedOptions.sort(compareLabel);
     return groupedOptions;
 
 }
