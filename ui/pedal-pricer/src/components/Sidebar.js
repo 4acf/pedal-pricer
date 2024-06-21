@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import * as FaIcons from 'react-icons/fa'   //for hamburger icon
-import * as AiIcons from 'react-icons/ai'   //for 'X' icon
+import * as AiIcons from 'react-icons/ai'   //for 'X' icon and zoom in/out icons
 import * as FiIcons from 'react-icons/fi'   //info icon
 import { IconContext } from 'react-icons'
 import { SidebarData } from './SidebarData'
@@ -29,12 +29,18 @@ const HeaderIcon = styled(Link)`
   align-items: center;
 `
 
-const HeaderInfoIcon = styled(Link)`
-  margin-right: 2rem;
+const HeaderIconsRight = styled.div`
+  display: flex;
+  margin-right: 0.75rem;
+`
+
+const HeaderIconRight = styled(Link)`
+  margin-left: 1rem;
+  margin-right: 1rem;
   font-size: 2rem;
   height: 80px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `
 
@@ -94,7 +100,7 @@ const customStyles = {
   },
 };
 
-export default function Sidebar({ updateList, clearList }) {
+export default function Sidebar({ updateList, clearList, zoomIn, zoomOut }) {
 
   const [sidebar, setSidebar] = useState(false);
   const[modalIsOpen, setModalIsOpen] = useState(false);
@@ -112,9 +118,17 @@ export default function Sidebar({ updateList, clearList }) {
         <HeaderIcon to='#'>
           <FaIcons.FaBars onClick={toggleSidebar}/>
         </HeaderIcon>
-        <HeaderInfoIcon>
-          <FiIcons.FiInfo onClick={openModal}/>
-        </HeaderInfoIcon>
+        <HeaderIconsRight>
+          <HeaderIconRight>
+            <AiIcons.AiOutlineZoomIn onClick={zoomIn}/>
+          </HeaderIconRight>
+          <HeaderIconRight>
+            <AiIcons.AiOutlineZoomOut onClick={zoomOut}/>
+          </HeaderIconRight>
+          <HeaderIconRight>
+            <FiIcons.FiInfo onClick={openModal}/>
+          </HeaderIconRight>
+        </HeaderIconsRight>
       </Header>
       <SidebarOptions $sidebar={sidebar}>
         <SidebarWrapper>

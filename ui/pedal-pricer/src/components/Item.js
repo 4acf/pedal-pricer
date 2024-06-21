@@ -4,13 +4,11 @@ import { IconContext } from 'react-icons'
 import * as AiIcons from 'react-icons/ai'
 import './Item.css'
 
-export default function Item({ item, mouseClick, selectedID, resetSelections }) {
+export default function Item({ item, mouseClick, selectedID, resetSelections, ppi }) {
 
     const [imagepath, setImagepath] = useState("");
     const [rotation, setRotation] = useState(0);
     const [hidden, setHidden] = useState(false);
-
-    const ppi = 50;
 
     useEffect(() => {
 

@@ -25,7 +25,7 @@ const Bg = styled.div`
 
 const overridePrices = new Map();
 
-export default function Canvas({ data }) {
+export default function Canvas({ data, ppi }) {
 
   const [hidden, setHidden] = useState(true);
   const [name, setName] = useState("");
@@ -38,9 +38,6 @@ export default function Canvas({ data }) {
   const [dbid, setDbid] = useState(-1);
 
   const nodeRef = useRef(null);
-
-  //i wish javascript had pass by reference without having to use objects
-  //ill redo this at some point, i could probably loop through data once and return an object that contains three arrays which i map through
 
   const createPedalsArray = (data) => {
 
@@ -225,6 +222,7 @@ export default function Canvas({ data }) {
             mouseClick={mouseClick}
             selectedID={selectedID}
             resetSelections={resetSelections}
+            ppi={ppi}
             />
           </div>
         </Draggable>
@@ -246,6 +244,7 @@ export default function Canvas({ data }) {
             mouseClick={mouseClick}
             selectedID={selectedID}
             resetSelections={resetSelections}
+            ppi={ppi}
             />
           </div>
         </Draggable>
@@ -267,6 +266,7 @@ export default function Canvas({ data }) {
             mouseClick={mouseClick}
             selectedID={selectedID}
             resetSelections={resetSelections}
+            ppi={ppi}
             />
           </div>
         </Draggable>
