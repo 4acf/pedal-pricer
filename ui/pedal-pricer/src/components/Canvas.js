@@ -240,7 +240,7 @@ export default function Canvas({ data }) {
         position={null}
         grid={[1, 1]}
         scale={1}
-        ndoeRef={nodeRef}
+        nodeRef={nodeRef}
         >
           <div className="pb" ref={nodeRef}>
             <Item

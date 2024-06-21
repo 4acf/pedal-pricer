@@ -53,11 +53,18 @@ export default function Item({ item, mouseClick, selectedID, resetSelections }) 
 
     }
 
+    const keyDown = (event) => {
+        if(event.key === 'r')
+            rotateItem();
+    }
+
     return (
         <>
             {item.pedalID && !hidden && (
                 <div className={item.itemID === selectedID ? "pedals selected" : "pedals"} 
                     onClick={() => mouseClick(item.itemID, item.pedalBrand + " " + item.pedalName, item.pedalWidth, item.pedalHeight, item.pedalPrice, item.pedalID)}
+                    onKeyDown={keyDown}
+                    tabIndex={0}
                 >
                     <div className="rotatable" style={{transform: `rotate(${rotation}deg)`}}>
                         <img src={imagepath} alt={item.pedalName}  draggable="false" width={ppi * item.pedalWidth} height={ppi * item.pedalHeight}/> 
@@ -73,6 +80,8 @@ export default function Item({ item, mouseClick, selectedID, resetSelections }) 
             {item.pedalboardID && !hidden && (
                 <div className={item.itemID === selectedID ? "pedalboards selected" : "pedalboards"} 
                     onClick={() => mouseClick(item.itemID, item.pedalboardBrand + " " + item.pedalboardName, item.pedalboardWidth, item.pedalboardHeight, item.pedalboardPrice, item.pedalboardID)}
+                    onKeyDown={keyDown}
+                    tabIndex={0}
                 >
                     <div className="rotatable" style={{transform: `rotate(${rotation}deg)`}}>
                         <img src={imagepath} alt={item.pedalboardName}  draggable="false" width={ppi * item.pedalboardWidth} height={ppi * item.pedalboardHeight}/>
@@ -88,6 +97,8 @@ export default function Item({ item, mouseClick, selectedID, resetSelections }) 
             {item.powerSupplyID && !hidden && (
                 <div className={item.itemID === selectedID ? "powersupplies selected" : "powersupplies"} 
                     onClick={() => mouseClick(item.itemID, item.powerSupplyBrand + " " + item.powerSupplyName, item.powerSupplyWidth, item.powerSupplyHeight, item.powerSupplyPrice, item.powerSupplyID)}
+                    onKeyDown={keyDown}
+                    tabIndex={0}
                 >
                     <div className="rotatable" style={{transform: `rotate(${rotation}deg)`}}>
                         <img src={imagepath} alt={item.powerSupplyName}  draggable="false" width={ppi * item.powerSupplyWidth} height={ppi * item.powerSupplyHeight}/>
