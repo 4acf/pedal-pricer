@@ -136,8 +136,6 @@ export default function Sidebar({ updateList, clearList }) {
       >
       <h2>About</h2>
       <div>Welcome to Pedal Pricer, a way for guitar players (or any musicians, really) to plan pedalboards.</div>
-      <br></br>
-      <div>Pedal Pricer ... this part exaplins what it be doing.</div>
       <h2>This looks just like Pedal Playground, why does this exist?</h2>
       <div>I wanted to learn the basics of making a full stack web app, and this is my first attempt. I didn't see a point in reinventing a layout when Pedal Playground's is ultimately ideal. This site was made using React as opposed to jQuery, and the only Pedal Playground source code I consulted was concerned with styling. I was not given express permissision to use the data, however it is openly available on the Pedal Playground GitHub page and I do not plan on ever monetizing this site. Again, this site is meant as a learning tool for myself, not as competition with the original. </div>
       <br></br>

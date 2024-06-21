@@ -98,12 +98,10 @@ export default function Canvas({ data }) {
 
   const mouseClick = (id, name, x, y, price, dbid) => {
 
-    //i feel like this could probably all go in an object for optimization
-
     if(!selected){
       setSelected(true);
     }
-    
+
     setSelectedID(id);
     setName(name);
     setX(x);
@@ -111,7 +109,6 @@ export default function Canvas({ data }) {
     setPrice(price);
     setHidden(false);
     setDbid(dbid);
-    
 
   }
 
@@ -195,6 +192,7 @@ export default function Canvas({ data }) {
           <div>Override Price:</div>
           <CurrencyInput 
             defaultValue={overridePrices.get(dbid)}
+            value={overridePrices.get(dbid)}
             id="currency-input"
             name="currency-input"
             allowNegativeValue={false}
