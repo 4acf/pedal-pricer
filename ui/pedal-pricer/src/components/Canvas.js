@@ -187,7 +187,7 @@ export default function Canvas({ data }) {
   //we render each category seperately because i want pedalboards to always be below pedals 
   return (
     <Bg>
-      {!hidden && (<div className="itemcard">
+      {!hidden && data.length !== 0 &&(<div className="itemcard">
         <div className="itemname">{name}</div>
         <div className="itemdimensions">Dimensions: {x}in x {y}in</div>
         <div className="itemprice">Price: ${price}</div>

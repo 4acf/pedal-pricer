@@ -46,16 +46,6 @@ const AddButton = styled.button`
     cursor: pointer;
 `
 
-// const DropdownSelect = styled.select`
-//     background-color: #2c2c2c;
-//     color: white;
-//     border: 1px solid #4c4c4c;
-//     padding: 6px;
-//     border-radius: 5px;
-//     margin: 20px;
-//     margin-bottom: 0px;
-// `
-
 const ReactSelectWrapper = styled.div`
     margin-left: 20px;
     margin-right: 20px;
