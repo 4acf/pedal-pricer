@@ -108,9 +108,10 @@ export default function Sidebar({ updateList, clearList, zoomIn, zoomOut }) {
   const toggleSidebar = () => setSidebar(!sidebar);
 
   const openModal = () => setModalIsOpen(true);
-
+  
   const closeModal = () => setModalIsOpen(false);
 
+  Modal.setAppElement('#root');
 
   return (
     <IconContext.Provider value={{ color: '#fff' }}>
