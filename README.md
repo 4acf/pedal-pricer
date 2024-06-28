@@ -1,7 +1,9 @@
 # Pedal Pricer
 ![Preview Image](images/pedals.png)
 
-Pedal pricer is a tool for guitar players to budget and plan guitar effects pedalboards. It was built using React, ASP.NET Core, and Microsoft SQL Server, and takes inspiration from the existing [pedalplayground.com](https://pedalplayground.com)!
+Pedal pricer is a tool for guitar players to budget and plan guitar effects pedalboards. It was built using React, ASP.NET Core, and Microsoft SQL Server, and takes inspiration from the existing [pedalplayground.com](https://pedalplayground.com).
+
+Try the site out for yourself [here](https://pedalpricer.com).
 
 ## Usage
 
@@ -19,7 +21,7 @@ Every item can be rotated in 90 degree increments using the rotate bar on the to
 
 ![Total price](images/total.png)
 
-Pedal pricer keeps track of the total price of all items that are currently in the canvas!
+Pedal pricer keeps track of the total price of all items that are currently in the canvas.
 
 <br>
 
