@@ -11,6 +11,16 @@ api/PedalPricerAPI/bin
 api/PedalPricerAPI/.vs
 api/PedalPricerAPI/PedalPricerAPI.csproj.user
 
+ui/pedal-pricer/build
+api/PedalPricerAPI/Properties/PublishProfiles
+api/PedalPricerAPI/Properties/ServiceDependencies
+api/PedalPricerAPI/Properties/serviceDependencies.PedalPricerApi - Zip Deploy1.json
+api/PedalPricerAPI/Properties/serviceDependencies.PedalPricerApi - Zip Deploy1.json.user
+api/PedalPricerAPI/Properties/serviceDependencies.json
+api/PedalPricerAPI/Properties/serviceDependencies.local.json
+api/PedalPricerAPI/Properties/serviceDependencies.local.json.user
+api/PedalPricerAPI/wwwroot
+
 # testing
 /coverage
 

@@ -61,8 +61,8 @@ app.UseAuthorization();
 //enable folders + photos
 app.UseStaticFiles(new StaticFileOptions
 {
-    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Images")),
-    RequestPath = "/Images"
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images")),
+    RequestPath = "/wwwroot/Images"
 });
 
 app.MapControllers();
