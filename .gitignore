@@ -21,6 +21,8 @@ api/PedalPricerAPI/Properties/serviceDependencies.local.json
 api/PedalPricerAPI/Properties/serviceDependencies.local.json.user
 api/PedalPricerAPI/wwwroot
 
+ui/pedal-pricer/cypress/screenshots
+
 # testing
 /coverage
 
