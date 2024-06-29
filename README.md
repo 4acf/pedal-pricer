@@ -102,8 +102,7 @@ Here is a list of helpful react modules I made use of:
 </ul>
 
 ## Tests
-
-WIP
+To run the various end-to-end tests included in the repository, navigate to `ui/pedal-pricer/` and run `npx cypress open` (or alternatively `npx cypress run --headless` to run in the command line).
 
 ## Local Setup
 1. Prerequisites:
