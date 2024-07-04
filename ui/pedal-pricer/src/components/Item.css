@@ -1,19 +1,11 @@
-.pedals {
+.pedals, .pedalboards, .powersupplies {
     position: absolute;
     filter: drop-shadow(rgb(0, 0, 0, 0.5) 5px 5px 7px);
     outline: none;
-}
-
-.pedalboards {
-    position: absolute;
-    filter: drop-shadow(rgb(0, 0, 0, 0.5) 5px 5px 7px);
-    outline: none;
-}
-
-.powersupplies {
-    position: absolute;
-    filter: drop-shadow(rgb(0, 0, 0, 0.5) 5px 5px 7px);
-    outline: none;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0);
 }
 
 .pedals::after, .pedalboards::after, .powersupplies::after{
