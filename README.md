@@ -1,6 +1,11 @@
 # Pedal Pricer
 ![Preview Image](images/pedals.png)
 
+> [!NOTE]
+> This is an older version of the site.
+> 
+> The updated site’s [frontend](https://github.com/4acf/PedalPricerClient) and [backend](https://github.com/4acf/PedalPricerServer) code are publicly available, and you can access the new version at the same URL.
+
 Pedal pricer is a tool for guitar players to budget and plan guitar effects pedalboards. It was built using React, ASP.NET Core, and Microsoft SQL Server, and takes inspiration from the existing [pedalplayground.com](https://pedalplayground.com).
 
 Try the site out for yourself [here](https://pedalpricer.com).
