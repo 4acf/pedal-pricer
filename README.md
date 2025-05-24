@@ -2,7 +2,7 @@
 ![Preview Image](images/pedals.png)
 
 > [!NOTE]
-> This is an older version of the site.
+> This is an older version of the site that is no longer available.
 > 
 > The updated site’s [frontend](https://github.com/4acf/PedalPricerClient) and [backend](https://github.com/4acf/PedalPricerServer) code are publicly available, and you can access the new version at the same URL.
 
